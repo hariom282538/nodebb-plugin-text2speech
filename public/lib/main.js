@@ -11,12 +11,24 @@ $('document').ready(function() {
 		$(window).on('action:post.tools.load', addLinks);
 		$(window).on('action:posts.loaded', addLinks);
 	}
+	function audioCancel(event){
+		speechSynthesis.cancel();
+		$('#post'+event.data.id).html('<span class="menu-icon"><i class="fa fa-play-circle"></i></span>Audio');
+		$('#post'+event.data.id).unbind();
+		$('#post'+event.data.id).on('click',{id:event.data.id}, speech);
+	}
 	function speech(event){
 		var post_text = $('li[data-index="'+event.data.id+'"] .content').text().trim();
-		var speech = new SpeechSynthesisUtterance();
-		speech.text = post_text;
-		speech.lang = config.defaultLang;
-		speechSynthesis.speak(speech);
+		sentences = post_text.split(".")
+		for (i = 0; i < sentences.length; i++) {
+		  	sentence = sentences[i]
+			var speech = new SpeechSynthesisUtterance();
+			speech.text = sentence;
+			speech.lang = config.defaultLang;
+			speechSynthesis.speak(speech);
+			$('#post'+event.data.id).html('<span class="menu-icon"><i class="fa fa-stop-circle"></i></span>Audio');
+			$('#post'+event.data.id).on("click",{ id: event.data.id }, audioCancel );
+		}
 	}	
 	function addLinks(){
 		$('li[component="post"]').each(function( index ) {
