@@ -19,7 +19,7 @@ $('document').ready(function() {
 	}
 	function speech(event){
 		var post_text = $('li[data-index="'+event.data.id+'"] .content').text().trim();
-		sentences = post_text.split(".")
+		sentences = post_text.match(/.{1,200}/g);
 		for (i = 0; i < sentences.length; i++) {
 		  	sentence = sentences[i]
 			var speech = new SpeechSynthesisUtterance();
