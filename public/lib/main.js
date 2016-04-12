@@ -34,7 +34,7 @@ $('document').ready(function() {
 		$('li[component="post"]').each(function( index ) {
 			var id = $(this).attr('data-index');
 			if($('#post'+id).length > 0) return;
-			$(this).find('.post-tools').prepend('<a component="text2speech/addText2speech" href="#" id="post'+id+'">'+
+			$(this).find('.post-tools').prepend('<a component="text2speech/addText2speech" href="#none" id="post'+id+'">'+
 									'<span class="menu-icon"><i class="fa fa-play-circle"></i></span>Audio'+
 								  '</a>');
 			//added event
