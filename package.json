@@ -1,0 +1,29 @@
+{
+  "name": "nodebb-plugin-text2speech",
+  "version": "0.0.1",
+  "description": "Enable nodebb to listen a post.",
+  "main": "library.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tailot/nodebb-plugin-text2speech"
+  },
+  "keywords": [
+    "nodebb",
+    "plugin",
+    "text2speech"
+  ],
+  "author": {
+    "name": "Vincenzo Tilotta",
+    "email": "tailot@gmail.com"
+  },
+  "nbbpm": {
+    "compatibility": "^1.0.0"
+  },
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/tailot/nodebb-plugin-text2speech/issues"
+  }
+}

@@ -1,0 +1,13 @@
+{
+	"id": "nodebb-plugin-text2speech",
+	"name": "text2speech for nodebb",
+	"description": "Enable nodebb to listen a post.",
+	"url": "https://github.com/tailot/nodebb-plugin-text2speech",
+	"hooks": [],
+	"staticDirs": {
+		"public": "public"
+	},
+	"scripts": [
+	  "public/lib/main.js"
+	]
+}
