@@ -18,7 +18,7 @@ $('document').ready(function() {
 		$('#post'+event.data.id).on('click',{id:event.data.id}, speech);
 	}
 	function speech(event){
-		var post_text = $('li[data-index="'+event.data.id+'"] .content').text().trim();
+		var post_text = $('.post-content').text().trim();
 		sentences = post_text.match(/.{1,200}/g);
 		for (i = 0; i < sentences.length; i++) {
 		  	sentence = sentences[i]
