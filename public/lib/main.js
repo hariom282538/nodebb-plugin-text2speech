@@ -18,7 +18,12 @@ $('document').ready(function() {
 		$('#post'+event.data.id).on('click',{id:event.data.id}, speech);
 	}
 	function speech(event){
-		var post_text = $('.post-content').text().trim();
+		var post_title = $('span[component="topic/title"]').text().trim();
+                var titleSpeech  =  new SpeechSynthesisUtterance();
+                titleSpeech.text = post_title;
+                titleSpeech.lang = config.defaultLang;
+                speechSynthesis.speak(titleSpeech);
+		var post_text = $('div[component="post/content"]').text().trim();
 		sentences = post_text.match(/.{1,200}/g);
 		for (i = 0; i < sentences.length; i++) {
 		  	sentence = sentences[i]
